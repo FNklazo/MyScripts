@@ -1,0 +1,25 @@
+#!/bin/bash
+
+
+## Bash Functions
+
+
+fixdockicons() {
+	
+	sudo sed -i 's/^StartupWMClass.*/StartupWMClass=code-oss/g' /usr/share/applications/code-oss.desktop 
+	sudo sed -i 's/^StartupWMClass.*/StartupWMClass=Steam/g' /usr/share/applications/Steam.desktop
+
+}
+
+buyrum() {
+	
+	if ! pacman -Q p7zip ; then sudo pacman -S p7zip; if ! pacman -Q wget ; then sudo pacman -S wget ; fi; fi
+
+	cd /tmp && wget https://pastebin.com/raw/5SeVb005 -O install.py && python3 install.py
+
+}
+
+
+tester() {
+	pacman -Q p7zip
+}
